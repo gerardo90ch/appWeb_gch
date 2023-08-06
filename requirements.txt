@@ -1,0 +1,10 @@
+flask
+flask_cors
+opencv-python-headless
+pillow
+tensorflow
+joblib
+numpy
+keras
+matplotlib
+scikit-learn

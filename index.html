@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contador de vocales</title>
+</head>
+<body>
+    <form action="http://localhost:5000/processimage" method="post" enctype="multipart/form-data">
+        <input type="file" name="image">
+        <input type="submit" value="Enviar">
+        <br>
+        <br>
+        <label>Horizontal</label>
+        <select name="horizontal" id="horizontal">
+            <option value="">Seleccione Valor</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+
+        <label>Vertical</label>
+        <select name="vertical" id="vertical">
+            <option value="">Seleccione Valor</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+    </form>
+
+    <h1>Resultados:</h1>
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>Vocal</th>
+                <th>Cantidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Las filas se agregarán dinámicamente mediante JavaScript -->
+        </tbody>
+    </table>
+
+    <!-- Contenedor para las imágenes -->
+    <div id="imageContainer"></div>
+
+    <script>
+        document.querySelector("form").addEventListener("submit", function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            fetch("http://localhost:5000/processimage", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                const tableBody = document.getElementById("dataTable").getElementsByTagName("tbody")[0];
+                tableBody.innerHTML = "";
+
+                // Agrega filas a la tabla de resultados
+                for (const key in data.resumen) {
+                    if (data.resumen.hasOwnProperty(key)) {
+                        const newRow = tableBody.insertRow();
+                        const cell1 = newRow.insertCell(0);
+                        const cell2 = newRow.insertCell(1);
+                        cell1.textContent = key;
+                        cell2.textContent = data.resumen[key];
+                    }
+                }
+
+                // Agrega las imágenes al contenedor de imágenes
+                const imageContainer = document.getElementById("imageContainer");
+                imageContainer.innerHTML = "";
+
+                data.imagenes.forEach(imgBase64 => {
+                    const imgElement = document.createElement("img");
+                    imgElement.src = "data:image/png;base64," + imgBase64;
+                    imgElement.style.maxWidth = "100%";
+
+                    // Aplica un borde a cada imagen
+                    imgElement.style.border = "10px solid #ccc";
+                    imageContainer.appendChild(imgElement);
+                });
+            })
+            .catch(error => {
+                console.error('Error en las solicitudes:', error);
+            });
+        });
+    </script>
+</body>
+</html>
