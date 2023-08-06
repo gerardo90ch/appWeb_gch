@@ -1,3 +1,12 @@
+Esta app web permite identificar vocales en una imagen, de preferencia manuscritas. Se ingresa la imagen y se selecciona en base a la cantidad de letras presente en la imagen, igualmente en la carpeta /imagenes_prueba hay muestras para realizar pruebas.
+Utiliza los puertos 8000, 5000 y 5001
+Igualmente, esta en la carpeta /modelo, el modelo con el set de entrenamiento, si es necesario generar el modelo entrenado.
+
+Utilizar python3.9
+
+
+GCH
+
 # Instrucciones
 
 ## Instalar dependencias
