@@ -19,12 +19,12 @@ python3 -m pip install -r requirements.txt
 ```bash
 cd modelo/ 
 python3 modelo.py
+cd .. 
 ```
 
 ## Correr un servidor web y el API
 
 ```bash
-cd .. 
 python3 -m http.server &
 python3 app.py &
 python3 baseDatos.py
