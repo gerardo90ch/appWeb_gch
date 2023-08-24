@@ -17,7 +17,7 @@ python3 -m pip install -r requirements.txt
 ## Generar modelo primero
 
 ```bash
-cd /modelo &
+cd modelo/ &
 python3 modelo.py
 ```
 
