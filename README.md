@@ -17,14 +17,14 @@ python3 -m pip install -r requirements.txt
 ## Generar modelo primero
 
 ```bash
-cd modelo/ &
+cd modelo/ 
 python3 modelo.py
 ```
 
 ## Correr un servidor web y el API
 
 ```bash
-cd .. &
+cd .. 
 python3 -m http.server &
 python3 app.py &
 python3 baseDatos.py
