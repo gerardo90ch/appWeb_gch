@@ -24,12 +24,11 @@ python3 modelo.py
 ## Correr un servidor web y el API
 
 ```bash
+cd .. &
 python3 -m http.server &
 python3 app.py &
 python3 baseDatos.py
 ```
-
-Ambos comandos deben ser ejecutados desde esta misma carpeta
 
 
 ## Otras instrucciones
