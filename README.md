@@ -2,8 +2,6 @@ Esta app web permite identificar vocales en una imagen, de preferencia manuscrit
 Utiliza los puertos 8000, 5000 y 5001
 Igualmente, esta en la carpeta /modelo, el modelo con el set de entrenamiento, si es necesario generar el modelo entrenado.
 
-Utilizar python3.9
-
 
 GCH
 
@@ -14,17 +12,15 @@ GCH
 ```bash
 sudo apt update
 sudo apt install python3-pip
-sudo add-apt-repository ppa:deadsnakes/ppa
-sudo apt install python3.9
-python3.9 -m pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 ```
 
 ## Correr un servidor web y el API
 
 ```bash
 python3 -m http.server &
-python3.9 app.py &
-python3.9 baseDatos.py
+python3 app.py &
+python3 baseDatos.py
 ```
 
 Ambos comandos deben ser ejecutados desde esta misma carpeta
