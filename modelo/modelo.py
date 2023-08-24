@@ -73,7 +73,7 @@ print("F1-score:", f1_score)
 
 accuracy = accuracy_score(y_true, y_pred_classes)
 print("Accuracy:", accuracy)
-
+'''
 # Graficar la accuracy durante las epochs
 def plot_accuracy(history):
     plt.plot(history.history['accuracy'])
@@ -112,6 +112,6 @@ for i in range(imagenes_a_visualizar):
     axes[i].axis('off')
 
 plt.show()
-
+'''
 #Guardar modelo
 joblib.dump(modelo, 'modeloVocales.pkl')
