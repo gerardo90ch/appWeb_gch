@@ -114,4 +114,4 @@ for i in range(imagenes_a_visualizar):
 plt.show()
 '''
 #Guardar modelo
-joblib.dump(modelo, 'modeloVocales.pkl')
+joblib.dump(modelo, '../modeloVocales.pkl')
