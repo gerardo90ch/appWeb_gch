@@ -14,6 +14,7 @@ GCH
 ```bash
 sudo apt update
 sudo apt install python3-pip
+sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt install python3.9
 python3.9 -m pip install -r requirements.txt
 ```
